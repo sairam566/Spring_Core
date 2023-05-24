@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.list.Parcel" id="parcel">
+		<constructor-arg value="AWB1234321"/>
+		<property name="source" value="Ong"/>
+		<property name="destination" value="Hyd"/>
+		<property name="goods">
+			<list value-type="java.lang.String">
+				<value>Apple TV</value>
+				<value>Ipad Pro</value>
+				<value>IPhone</value>
+				<value>IMac</value>
+				<value>Mac Book Pro</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="com.tsr.set.Staff" id="s1">
+		<property name="staffNo" value="1"/>
+		<property name="fullname" value="kari"/>
+		<property name="gender" value="M"/>
+		<property name="age" value="34"/>
+	</bean>
+	
+	<bean class="com.tsr.set.Staff" id="s2">
+		<property name="staffNo" value="2"/>
+		<property name="fullname" value="Bhargav"/>
+		<property name="gender" value="M"/>
+		<property name="age" value="31"/>
+	</bean>
+	
+	<bean class="com.tsr.set.Store" id="store">
+		<constructor-arg value="1"/>
+		<property name="storeName" value="TSR-Ogl"/>
+		<property name="location" value="HYD"/>
+		<property name="staff">
+			<set value-type="com.tsr.set.Staff">
+				<ref bean="s1"/>
+				<ref bean="s2"/>
+			</set>
+		</property>
+	</bean>
+	
+</beans>
