@@ -13,9 +13,14 @@ public class App {
 		BeanFactory factory = new XmlBeanFactory(new ClassPathResource("/com/tsr/config/application-context.xml"));
 
 		// List
-		Parcel parcel = factory.getBean("parcel", Parcel.class);
+		Parcel parcel1 = factory.getBean("parcel1", Parcel.class);
 
-		System.out.println(parcel);
+		System.out.println(parcel1);
+		
+		//Util List
+		Parcel parcel2 = factory.getBean("parcel2", Parcel.class);
+
+		System.out.println(parcel2);
 
 		// Set
 		Store store = factory.getBean("store", Store.class);

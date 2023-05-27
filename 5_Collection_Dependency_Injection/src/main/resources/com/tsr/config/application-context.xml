@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
 	<!-- List -->
-	<bean class="com.tsr.list.Parcel" id="parcel">
+	<bean class="com.tsr.list.Parcel" id="parcel1">
 		<constructor-arg value="AWB1234321"/>
 		<property name="source" value="Ong"/>
 		<property name="destination" value="Hyd"/>
@@ -18,6 +20,23 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- util List -->
+	<bean class="com.tsr.list.Parcel" id="parcel2">
+		<constructor-arg value="AWB1234321"/>
+		<property name="source" value="Ong"/>
+		<property name="destination" value="Hyd"/>
+		<property name="goods" ref="itemsLst"/>
+	</bean>
+	
+	<util:list id="itemsLst" value-type="java.lang.String" list-class="java.util.ArrayList">
+		<value>Apple TV</value>
+		<value>Ipad Pro</value>
+		<value>IPhone</value>
+		<value>IMac</value>
+		<value>Mac Book Pro</value>
+	</util:list>
+	
 	
 	
 	<bean class="com.tsr.set.Staff" id="s1">
