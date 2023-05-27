@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- List -->
 	<bean class="com.tsr.list.Parcel" id="parcel">
 		<constructor-arg value="AWB1234321"/>
 		<property name="source" value="Ong"/>
@@ -18,6 +19,7 @@
 		</property>
 	</bean>
 	
+	
 	<bean class="com.tsr.set.Staff" id="s1">
 		<property name="staffNo" value="1"/>
 		<property name="fullname" value="kari"/>
@@ -32,6 +34,7 @@
 		<property name="age" value="31"/>
 	</bean>
 	
+	<!-- Set -->
 	<bean class="com.tsr.set.Store" id="store">
 		<constructor-arg value="1"/>
 		<property name="storeName" value="TSR-Ogl"/>
@@ -44,4 +47,32 @@
 		</property>
 	</bean>
 	
+	<!-- Map -->
+	<bean class="com.tsr.map.Store" id="mStore">
+		<constructor-arg value="TSR"/>
+		<constructor-arg value="NEW YORK"/>
+		<property name="employeeCount" value="50000"/>
+		<property name="itemsWithPrices">
+			<map key-type="java.lang.String" value-type="java.lang.Integer">
+				<entry key="Iphone" value="90000" />
+				<entry key="Ipad" value="100000" />
+				<entry key="IMac" value="200000" />
+				<entry key="MacBook Pro" value="400000" />
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Properties -->
+	<bean class="com.tsr.props.Profile" id="profile">
+		<property name="fullname" value="TSR"/>
+		<property name="age" value="12"/>
+		<property name="wishList">
+			<props>
+				<prop key="Iphone">90000</prop>
+				<prop key="MacBook Pro">400000</prop>
+				<prop key="Ipad">100000</prop>
+				<prop key="IMac">200000</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
