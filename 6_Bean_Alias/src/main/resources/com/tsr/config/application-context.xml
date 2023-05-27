@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.beans.Person" id="person" name="p1,p2,p3">
+		<property name="personNo" value="1"/>
+		<property name="personName" value="TSR"/>
+		<property name="gender" value="M"/>
+		<property name="age" value="28"/>
+	</bean>
+	
+	<alias name="p1" alias="p4"/>
+	<alias name="person" alias="p5"/>
+</beans>
