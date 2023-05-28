@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Autowire using byName -->
+	<bean class="com.tsr.bytype.SalesOrder" id="salesOrder" autowire="byName"/>
+	
+	<bean class="com.tsr.bytype.Distributer" id="distributer1" name="distributer">
+		<constructor-arg value="12" />
+		<property name="name" value="TSR"></property>
+	</bean>
+	
+	<!-- Autowire using byType -->
+	
+	<bean class="com.tsr.byname.Car" id="car" autowire="byType">
+		<constructor-arg value="lamborghini "/>
+		<property name="price" value="32200000" />
+	</bean>
+	
+	<bean class="com.tsr.byname.Engine" id="LV10">
+		<constructor-arg value="M1"/>
+		<constructor-arg value="1"/>
+		<property name="name" value="Huracan"/>
+	</bean>
+	
+		<bean class="com.tsr.byname.Engine" id="LV8" autowire-candidate="false">
+		<constructor-arg value="M2"/>
+		<constructor-arg value="2"/>
+		<property name="name" value="Urus"/>
+	</bean>
+	
+	<bean class="com.tsr.constructor.Bike" id="bike" autowire="constructor">
+		<property name="name" value="BMW"/>
+	</bean>
+	
+	<bean class="com.tsr.constructor.FuelTank" id="petrolTank" autowire-candidate="false">
+		<property name="capacity" value="30"/>
+		<property name="type" value="Petrol"/>
+	</bean>
+	
+	<bean class="com.tsr.constructor.FuelTank" id="dieselTank">
+		<property name="capacity" value="30"/>
+		<property name="type" value="Diesel"/>
+	</bean>
+	
+</beans>
