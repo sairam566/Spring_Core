@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.singletone.BiCycle" id="biCycle1" scope="singleton"/>
+	<bean class="com.tsr.singletone.BiCycle" id="biCycle2" scope="singleton"/>
+	
+	<!-- Wrong way to call a class with Private Constructor -->
+	<bean class="com.tsr.singletone.DateConverter" id="dateConverter1" scope="singleton"/>
+	
+	<bean class="com.tsr.singletone.DateConverter" id="dateConverter2" scope="singleton" factory-method="getInstance"/>
+	
+	<!-- Prototype -->
+	<bean class="com.tsr.prototype.Car" id="car" scope="prototype"/>
+</beans>
