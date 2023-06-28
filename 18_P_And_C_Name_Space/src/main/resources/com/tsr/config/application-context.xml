@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.beans.Engine" id="engine" p:name="V8" p:modelNo="5656"/>
+	<!-- <bean class="com.tsr.beans.Engine" id="engine" c:modelNo="V8" c:name="Varon"/> -->
+	<bean class="com.tsr.beans.Car" id="car" p:id="566" p:fuelType="Disele" p:engine-ref="engine"/>
+</beans>
