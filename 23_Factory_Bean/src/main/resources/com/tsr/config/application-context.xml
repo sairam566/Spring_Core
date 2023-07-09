@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.beans.Meeting" id="meeting">
+		<constructor-arg name="subject" value="Staff Meeting" />
+		<constructor-arg name="participants"
+			value="Sai,Ram,Test" />
+		<constructor-arg name="calendar" ref="calendar" />
+	</bean>
+
+	<bean class="com.tsr.beans.CalendarFactoryBean" id="calendar"
+		c:day="09" c:month="07" c:year="2023" c:hours="8" c:minutes="22" />
+</beans>
