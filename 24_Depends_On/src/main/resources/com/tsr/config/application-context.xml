@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.beans.Cache" id="cache" factory-method="getInstance"/>
+	<bean class="com.tsr.beans.CityRIPropsAccessor" id="cityRIPropsAccessor">
+		<constructor-arg value="RI"/>
+	</bean>
+	
+	<bean class="com.tsr.beans.CacheManager" id="cacheManager">
+		<constructor-arg name="cache" ref="cache"/>
+		<constructor-arg name="accessor">
+			<list>
+				<ref bean="cityRIPropsAccessor"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="com.tsr.beans.LoanManager" id="loanManager" depends-on="cacheManager">
+		<property name="cache" ref="cache"></property>
+	</bean>
+</beans>
