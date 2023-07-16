@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.method.replace.PlanFinderReplacer" id="planFinderReplacer" />
+	
+	<bean class="com.tsr.beans.PlanFinder" id="planFinder">
+		<replaced-method replacer="planFinderReplacer" name="findPlans" />
+	</bean>
+
+</beans>
