@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.tsr.beans.GasStation" id="gasStation"/>
+	<bean class="com.tsr.beans.Guarage" id="guarage"/>
+	<bean class="com.tsr.beans.Toolbox" id="toolbox" />
+	<bean class="com.tsr.beans.ObjectTickerBeanPostProcessor" id="objectTickerBeanPostProcessor"/>
+</beans>
