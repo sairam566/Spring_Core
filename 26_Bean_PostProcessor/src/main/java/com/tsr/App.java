@@ -26,11 +26,12 @@ public class App
 //        
 //        reader.loadBeanDefinitions(new ClassPathResource("com/tsr/config/application-context.xml"));
     	
+//		  ObjectTickerBeanPostProcessor postProcessor = beanFactory.getBean("objectTickerBeanPostProcessor", ObjectTickerBeanPostProcessor.class);
+        
+//		  beanFactory.addBeanPostProcessor(postProcessor);
+    	
+    	//Using ApplicationContext
     	ApplicationContext beanFactory = new ClassPathXmlApplicationContext("com/tsr/config/application-context.xml");
-        
-        //ObjectTickerBeanPostProcessor postProcessor = beanFactory.getBean("objectTickerBeanPostProcessor", ObjectTickerBeanPostProcessor.class);
-        
-        //beanFactory.addBeanPostProcessor(postProcessor);
         
         beanFactory.getBean("gasStation",GasStation.class);
         beanFactory.getBean("guarage",Guarage.class);
