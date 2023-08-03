@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 //Have Source Code
-// Target
+// Dependent
 @Component
 public class Room {
 	@Value("566")
